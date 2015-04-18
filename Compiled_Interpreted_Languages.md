@@ -1,6 +1,18 @@
-# A Little Computer Science Background
+![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
 
-A software program passes through a couple of phases as it's being developed and used.
+# Compiled vs Interpreted Languages.
+Programming Languages are typically categorized by the process used to create runnable programs.
+
+There are two distinct processes, Compilation and Interpretation. We'll discuss both.
+
+A software program passes through a couple of phases as it's being developed and used or executed.
+
+## Objectives
+By the end of this, students should be able to:
+- Understand the difference between compiled and interpreted languages.
+- Use this knowledge to understand variable scope in Javascript.
+- Use this knowledge to understand what happens during compile time and runtime phases.
+- Provide the language needed to be able to communicate with other developers when discussing and evaluating programming languages.
 
 ## We Do
 
@@ -22,18 +34,21 @@ main(){
 }
 ```
 
-#### Program Compilation, this is compile time.
-A developer *compiles* the code. This is the process of turning the text, i.e. source code, in the above file into a form, ones and zeros, that can executed by the computer. The resulting ones and zeros is often referred to as a *binary* or *executable*.
+#### Program Compilation.
+A developer *compiles* the code. This is the process of turning the text, i.e. source code, in the above file into a form,(ones and zeros), that can be executed by the computer. 
 
-Perhaps the name of the *executable* is `hello_world`. **Notice the executable is missing the file extension .c**
+The resulting ones and zeros is often referred to as a *binary* or *executable*.
+
+`Source Code ---compilation--> Executable`
 
 Here we compile hello_world.c and produce an executable named hello_world: 
+**Notice the executable is missing the file extension .c**
 
 ```
 $ gcc -o hello_world hello_world.c
 ```
 
-#### Program Execution, i.e. Runtime.
+#### Program Execution.
 A User will install the *executable*, `hello_world`, on their computer and run it.
 
 ```
@@ -42,14 +57,29 @@ Hello World!
 $
 ```
 
-**Notice the distinction between Compile time and Runtime.** *We'll come back to how these two are different*
+#### Compile Time vs Runtime. (Optional)
 
-## I Do
+Compiling source code is a large area of interest and research. There are many steps involved in compilation. For example:
 
-Draw diagram/s to represent the above process.
+1. Tokenize/Lexical Analysis is where each character in source code is scanned and grouped into language constructs, or tokens. 
+2. Generate internal structures to implement variable scope.
+3. Building an Abstract Syntax Tree(AST). This will model the semantics/meaning of a program. Build expression trees where each node is a token and the tree structure captures the semantics of the program.
+4. Generating lower level, intermediate code. This intermediate code can be Assembly Language or 1's and 0's for compiled languages. Or it can be bytecode for interpreted langauges.
+
+`Lexical Analysis --> Build variable scope (Lexical Scope) ---> Build AST --> Generate executable or Bytecode`
+
+Creating a running program, a process, is also a complex task.
+
+1. Load executable into memory.
+2. Find starting point of program.
+3. Allocate memory for process.
+.....
+N. 1' and 0's read and run by CPU.
+
+We'll dive into more of these topics later.
 
 ## Compiled Languages
-This is the process used for programming languages that are explicitly compiled. Compiled languages such as C, C++, Go, Swift, etc follow this process.
+The above is the process used for programming languages that are explicitly compiled. Compiled languages such as C, C++, Go, Swift, etc follow this process.
 
 The source code is translated from text, i.e. source code, to ones and zeros, i.e. executables, that are understood and run by the computer's CPU. 
 
@@ -138,4 +168,10 @@ There are lots of flame wars about these and other pros and cons of compiled vs 
 
 ## Your Turn (Optional) 
 Research the differences, pros and cons, of compiled and interpreted languages.
+
+## Additional Resources
+
+- [Compiled Languages](http://en.wikipedia.org/wiki/Compiled_language)
+- [Interpreted Languages](http://en.wikipedia.org/wiki/Interpreted_language)
+- [Programming Language Pragmatics](http://www.amazon.com/Programming-Language-Pragmatics-Third-Edition/dp/0123745144)
 
