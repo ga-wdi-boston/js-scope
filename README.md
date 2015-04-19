@@ -151,26 +151,26 @@ console.log(removeYears());
 1) Lookup firstName in GlobalScope. Set it's value to 'John'.  
 2) Lookup lastName in GlobalScope. Set it's value.  
 3) Lookup age in GlobalScope. Set it's value.  
-4) Lookup displayPerson, firstName and lastName in GlobalScope.
-5) Execute displayPerson function
+4) Lookup displayPerson, firstName and lastName in GlobalScope.  
+5) Execute displayPerson function.  
 
-**Now we'll look up variables in the inner displayPerson scope.**
+**Now we'll look up variables in the inner displayPerson scope.**  
 
-6) Lookup fname, lname, prefix, fullName in displayPerson scope.
-7) Set there values.
-8) Lookup getFullName in displayPerson scope.
-9) Execute getFullName function.
+6) Lookup fname, lname, prefix, fullName in displayPerson scope.  
+7) Set there values.  
+8) Lookup getFullName in displayPerson scope.  
+9) Execute getFullName function.  
 
-**Now we'll look up variables in the inner getFullName scope.**
+**Now we'll look up variables in the inner getFullName scope.**  
   
-10) Lookup fullName, prefix, fname and lname variables in getFullName scope. NOT FOUND.
-10.1) Lookup fullName, prefix, fname, lname variables in displayPerson scope. FOUND. Get their values.
+10) Lookup fullName, prefix, fname and lname variables in getFullName scope. NOT FOUND.  
+10.1) Lookup fullName, prefix, fname, lname variables in displayPerson scope. FOUND. Get their values.  
 
 
 11) Lookup suffix in getFullName scope. NOT FOUND.  
 11.1) Lookup suffix in displayPerson scope. NOT FOUND.  
-11.2) Lookup suffix in outer, Global, scope. NOT FOUND.  
-11.3) Cause a reference error. 
+11.2) Lookup suffix in outer, Global, scope. NOT FOUND.   
+11.3) Cause a reference error.  
 
 
 #### Remove suffix and continue.
