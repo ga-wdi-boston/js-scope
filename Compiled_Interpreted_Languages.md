@@ -1,20 +1,22 @@
 ![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
 
 # Compiled vs Interpreted Languages.
-Programming Languages are typically categorized by the process used to create runnable programs.
+Programming Languages are typically categorized by the process we use to go from code written by us to runnable programs.
 
-There are two distinct processes, Compilation and Interpretation. We'll discuss both.
+The processes are:  
+1. Compilation  
+2. Interpretation  
 
-A software program passes through a couple of phases as it's being developed and used or executed.
+We'll discuss both. And we'll see how software passes through a couple of phases as it's being developed and used or executed.
 
 ## Objectives
-By the end of this, students should be able to:
-- Understand the difference between compiled and interpreted languages.
-- Use this knowledge to understand variable scope in Javascript.
-- Use this knowledge to understand what happens during compile time and runtime phases.
-- Provide the language needed to be able to communicate with other developers when discussing and evaluating programming languages.
+By the end of this, students should be able to:  
+- Learn a bit about how programs are understood by computer hardware.  
+- Understand the difference between compiled and interpreted languages.  
+- Use this knowledge to understand variable scope in Javascript.  
+- Use this knowledge to understand what happens during compile time and runtime.  
+- Provide the language needed to be able to communicate with other developers when discussing and evaluating programming languages.  
 
-## We Do
 
 #### Program Creation/Development.
 A developer writes code in a file using an editor. Perhaps in a source file named `hello_world.c`
@@ -39,7 +41,7 @@ A developer *compiles* the code. This is the process of turning the text, i.e. s
 
 The resulting ones and zeros is often referred to as a *binary* or *executable*.
 
-`Source Code ---compilation--> Executable`
+`Source Code` ---compilation--> `Executable`
 
 Here we compile hello_world.c and produce an executable named hello_world: 
 **Notice the executable is missing the file extension .c**
@@ -56,6 +58,24 @@ $ hello_world
 Hello World!
 $
 ```
+
+When we run this `hello_world` program the computer will load alll these 1's and 0's into the computer memory and then the computer's Central Processing Unit(CPU) will process these 1's and 0's.
+
+Lets be bold, and open up that hello_world executable, I mena whats in there, huh?
+
+`$ od -H hello_world`
+
+#### Assembly Language (optional)
+
+The 1's and 0's that are run by the CPU actually are representation of the CPU's *Assembly Language*. These are low level instructions that the CPU understands.
+
+This will produce the actual assembly language for your computer's CPU in the `hello_world.s` file.
+
+`$ gcc -S -c hello_world.c` 
+### Lab
+
+1. Create a program that will print "Hello my name is <your name". 
+2. Run it.  
 
 #### Compile Time vs Runtime. (Optional)
 
