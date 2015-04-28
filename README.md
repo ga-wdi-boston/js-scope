@@ -6,39 +6,79 @@
 
 By the end of this, students should be able to:
 
-- Understand compiled vs interpreted languages, in order to understand scope.
-- Understand Lexical Scope.
-    - How variables are declared using Lexical Scope.
-    - How it's constructed.
-- Know that Javascript only provides Global and Function Scope.
-- Understand how variable hoisting follows from Lexical Scope.
+- Draw a diagram representing variable scope.
+- Create a list that explains runtime behavior. 
+- Create a program that hoists variables.
 
-## Instructions
 
-## Compiled and Interpreted Languages.
-[Compiled and Interpreted Languages](Compiled_Interpreted_Languages.md)
+## Compilation
 
-## I Do
+The code that you write **MUST** be translated into a form that the computer can understand.
 
-Draw diagrams that show this process. 
+Source code is human readable, *we hope*. This source code may be translated into a set of 1's and 0's that a computer's CPU can understand. Yep, the CPU is a chip on the computer that does all the processing, hey there is a reason it's called the Central Processing Unit(CPU).
 
-### Javascript Phases.
+`Source Code`  ==>  `1's and 0's`
 
-The Javascript Virtual Machine (VM) performs many operations to go from text in file, i.e. code, to 1's and 0's that are stored in Memory and executed by a CPU.
+Or, the source code may be translated into a another type of langauge, byte code, that can be understood by a Virtual Machine(VM).
 
-The phases are:  
+`Source Code` ==> `byte code`
 
-- Load: Load the javascript file.
-- Compilation: Compile javascript code in a file to a form that can be executed.
-- Execution: Run the javascript program.
+### Compiled Languages
+
+Some languages are *explicitly* compiled. Another words,the programmer must run command to invoke compilation. 
+
+For example, the **C** and **C++** languages are explicity compiled. The programmer must run a command like:
+
+`gcc -o hello_world -c hello_world.c` 
+
+To translate the C code in the hello_world.c file into an *executable* or *binary* file that contains the 1's and 0's understood by the CPU. 
+
+*gcc* is a **C** compiler.
+
+`Source Code`  ==>  `1's and 0's`
+
+`hello_world.c`  ==>  `hello_world`
+
+### Interpreted Languages
+Some languages do **not** require the programmer to explicitly run a compiler. **Javascript**, **Java**, **Ruby** are a couple of intepreted languages. 
+
+Don't get me wrong, there is still compilation being down but it's done automatically. 
+
+`Source Code` ==> `byte code`
+
+## From Source to Running Code.
+There are two basic phases to go through when going from code in a file to a program running.
+
+- Compile Time.  
+ is a phase when the source code is translated to another form. 
+ 
+ For example, when we run a javascript program we will compile javascript to an intermediate language/bytecode that the Javscript Virtual Machine(VM) understands.
+- Runtime.  
+	is the phase when the computer actually runs each statement in the program.  
+	For example, this is when the computer runs the javascript program bytecode.
+
+### Variable Scope
+Is where in a program a variable can be seen. In other words, where it can be used. *We'll see more later*, but you've seen that variables declared within a function can *not* be seen or used in the Global Scope.
+
+
+### Lexical Analysis
 
 Part of the Compilation phase is Lexical Analysis. In general, Lexical Analysis scans through the source code, one character at a time, looking for language constructs like variables, functions, built-in keywords, etc.
 
-During this time the compiler also looks for variable declarations in the source code and build **Variable Scopes**. Scope is *part of* **Execution Context(EC)**.  EC provides a Context for the next phase, Execution.
+It's during this time that the compiler builds variable scope and **declares** variable inside a variable scope.
+
+### Summary
+	
+	1. Read the Source Code in a javascript file into memory.
+	2. Compile the source code.  
+		a. Lexical Analysis.
+		b. Build Scope.
+		c. Turn source code into a form understood by VM, bytecode.
+	3. Execute bytecode.
 
 ## Building Scope.
 
-Scope is built during the Lexical Analysis part of the Compilation phase. When this is done it's called **Lexical Scope**. This is very common in many programming languages.
+Scope is built during the Lexical Analysis part of the Compilation phase. When scope is built during this phase it's called **Lexical Scope**. This is very common in many programming languages.
 
 Let's see how it works, eh. Heres the code we'll work with.  
 
@@ -173,20 +213,3 @@ console.log(removeYears());
 11.3) Cause a reference error.  
 
 
-#### Remove suffix and continue.
-
-## Bonus (Optional Section)
-
-If you're looking for extra challenge or practice once you've completed the above, try to...
-
-## Notes
-
-Gotcha's and extra information
-
-## Additional Resources
-
-List additional related resources such as videos, blog posts and official documentation.
-
-- Item 1
-- Item 2
-- Item 3
