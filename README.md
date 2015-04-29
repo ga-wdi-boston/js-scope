@@ -7,7 +7,7 @@
 By the end of this, students should be able to:
 
 - Draw a diagram representing variable scope.
-- Create a list that explains runtime behavior. 
+- Create a list of operations that explain runtime behavior. 
 - Create a program that hoists variables.
 
 
