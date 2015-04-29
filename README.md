@@ -172,7 +172,7 @@ function showAuto(year){
 showAuto(1969);
 ```
 
-## We do
+## Lab
 
 ### Execute Code
 
