@@ -148,14 +148,29 @@ console.log(removeYears());
     
     ![Scope](JS_Scope2.png)
 
-## You Do.
+## Lab.
 For the following code enumerate how scope is built and draw a diagram of this scope. *As I have done above*
 
 Work in teams.
 
 Compare the above with another team's deliverable.
 
-**Need some example code here!!!**
+```javascript
+
+var autoMake = "Ford";
+var autoModel = "LTD";
+
+function showAuto(year){
+  function autoInfo(){
+    var price = 124;
+    console.log("Auto is a " + year + " " + autoMake + " " + autoModel + ", it's price is " + price + "$");
+  }
+
+  autoInfo();
+};
+
+showAuto(1969);
+```
 
 ## We do
 
