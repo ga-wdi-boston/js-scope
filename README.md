@@ -99,13 +99,13 @@ How the interpreter processes this code:
         1. **All done with `getFullName` function, no more variable declarations.**
     1. **All done with `displayPerson` function, no more variable declarations.**
 
-    You may wish to preview our [diagram so far](dist/scope.txt).
+    You may wish to preview our [diagram so far](dist/scope.md).
 
 1. Found `removeYears` variable declaration. Put `removeYears` in Global scope. **Notice that `removeYears` value is a function.** So, create a inner scope and process this function.
     1. Found `age` and `minusYears` variable declarations. Put these in `removeYears` function scope.
     1. **All done with `removeYears` function, no more variable declarations.**
 
-    Modify your diagram to represent this last step, and then [check your solution](dist/scope2.txt).
+    Modify your diagram to represent this last step, and then [check your solution](dist/scope2.md).
 
 
 ## Lab: Diagramming Scope
