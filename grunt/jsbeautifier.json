@@ -6,13 +6,13 @@
   },
 
   "status": {
-    "src": ["<%= paths.project %>"],
+    "src": ["<%= paths.source %>"],
     "options": {
       "mode": "VERIFY_ONLY"
     }
   },
 
   "write": {
-    "src": ["<%= paths.project %>"]
+    "src": ["<%= paths.source %>"]
   }
 }
