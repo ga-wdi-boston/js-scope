@@ -128,13 +128,21 @@ function showAuto(year){
 showAuto(1969);
 ```
 
+[Solution: Diagram](dist/scope3.md)
+
 1. Name any and all scopes from which `autoModel` is available. ("Available" is another word for "defined".)
+    > `autoModel` is available in the `global`, `showAuto`, and `autoInfo` scopes.
+
 1. Is `autoInfo` available from the global scope? Can you execute `autoInfo()` from there?
+    > No, `autoInfo` is declared inside the `showAuto` scope and is therefore not visible globally. It also cannot be executed globally, since in the `global` scope, a reference to `autoInfo` is `undefined`.
+
 1. Is `price` visible from within `showAuto`?
+    > No, `price` is declared inside `autoInfo` and is therefore not visible to `showAuto`.
+
 1. Name any and all scopes from which `year` is available.
+    > `year` is available in the `showAuto` and `autoInfo` scopes.
 
 ## Additional Resources
 
 - [Functions - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
 - [What You Need To Know About JavaScript Scope - Smashing Magazine](http://www.smashingmagazine.com/2009/08/01/what-you-need-to-know-about-javascript-scope/)
-
