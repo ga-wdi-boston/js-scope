@@ -16,7 +16,7 @@ By the end of this, students should be able to:
 Suppose we add the following as the first line to a new file called `cookies.js`:
 
 ```js
-var favoriteCookie = "Snickerdoodle";
+var favoriteCookie = 'Snickerdoodle';
 ```
 
 The `favoriteCookie` variable is created in "global" scope. Global scope is simply the default scope, or top-most scope, we work within in JavaScript.
@@ -25,11 +25,11 @@ Local scope, on the other hand, is scope that is limited to a new function. For 
 
 ```js
 // global scope
-var favoriteCookie = "Snickerdoodle";
+var favoriteCookie = 'Snickerdoodle';
 
 var takeFromJar = function takeFromJar () {
-    var who = "Adam took the cookie from the cookie jar!"; // `who` is defined in the local scope (the function scope)
-    console.log("Who took the cookie from the cookie jar?", who);
+    var who = 'Adam took the cookie from the cookie jar!'; // `who` is defined in the local scope (the function scope)
+    console.log('Who took the cookie from the cookie jar?', who);
 };
 
 who; //=> undefined
@@ -41,16 +41,16 @@ The rule for scope in JavaScript is simple: only functions create new scope. Not
 
 Now that we know a bit more about how scope is created in JavaScript, we begin to see the importance of the `var` keyword. If you assign something to a variable in JavaScript *without* using `var`, that variable floats up to global scope. This is a Bad Idea™.
 
-```js
-var oreo = "DoubleStuf";
+```javascript
+var oreo = 'DoubleStuf';
 
 var bestOreo = function bestOreo () {
-    oreo = "Mint";
+    oreo = 'Mint';
     console.log(oreo);
 };
 
-bestOreo(); //=> "Mint"
-oreo; //=> "Mint" overwrote "DoubleStuf"
+console.log(bestOreo()); //=> 'Mint'
+console.log(oreo); //=> 'Mint' overwrote 'DoubleStuf'
 ```
 
 If we don't use the `var` keyword, we have to always be aware of what is in global scope. That's hard to do, it makes understanding scope more complex. Our advice is to always use `var` when assigning something to a variable.
@@ -69,21 +69,21 @@ function displayPerson(fname, lname){ //4, 4.i
   var fullName = null; // 4.ii
 
   function getFullName(){ // 4.iii
-    var suffix = "Esq.";  // 4.iii.a; Everybody's a lawyer, eh.
-    return  fullName = prefix + " " + fname + " " + lname + " " + suffix;
-  }; // 4.iii.b
+    var suffix = 'Esq.';  // 4.iii.a; Everybody's a lawyer, eh.
+    fullName = prefix + ' ' + fname + ' ' + lname + ' ' + suffix;
+    return fullName;
+  } // 4.iii.b
 
   return getFullName();
-}; // 4.iv
+} // 4.iv
 
 function removeYears(){ // 5
   var minusYears = 10, age = 49; // 5.i
   return age - minusYears;
-}; // 5.ii
+} // 5.ii
 
 console.log(displayPerson(firstName, lastName));
 console.log(removeYears());
-
 ```
 
 How the interpreter processes this code:
@@ -113,17 +113,17 @@ How the interpreter processes this code:
 Diagram scope for the following code. Work in pairs. When you're done, compare your work to another pair's. Discuss any differences and correct any mistakes. Then, answer the following questions together.
 
 ```javascript
-var autoMake = "Ford";
-var autoModel = "LTD";
+var autoMake = 'Ford';
+var autoModel = 'LTD';
 
 function showAuto(year){
   function autoInfo(){
     var price = 124;
-    console.log("Auto is a " + year + " " + autoMake + " " + autoModel + ", it's price is " + price + "$");
+    console.log('Auto is a ' + year + ' ' + autoMake + ' ' + autoModel + ', it\'s price is ' + price + '$');
   }
 
   autoInfo();
-};
+}
 
 showAuto(1969);
 ```
